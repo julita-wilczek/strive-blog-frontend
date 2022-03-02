@@ -3,9 +3,15 @@ import { Card } from "react-bootstrap";
 import BlogAuthor from "../blog-author";
 import { Link } from "react-router-dom";
 import "./styles.css";
+
+//Blog Item receives props from BlogList. It is an object called post
+//These props now come from fecth in BlogList. No changes introduced to the code below.
+
 export default class BlogItem extends Component {
+  
   render() {
     const { title, cover, author, _id } = this.props;
+    console.log(this.props._id)
     return (
       <Link to={`/blog/${_id}`} className="blog-link">
         <Card className="blog-card">
