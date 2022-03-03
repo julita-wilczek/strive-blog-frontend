@@ -37,11 +37,12 @@ const NavBar = ({setFiltered}) => {
           <Navbar.Brand as={Link} to="/">
             <img className="blog-navbar-brand" alt="logo" src={logo} />
           </Navbar.Brand>
-          <Form className="d-flex">
+          <div className="d-flex justify-items-end">
+          <Form className="d-flex me-2">
         <FormControl
           type="search"
           placeholder="Search"
-          className="me-auto"
+          className="blog-navbar-search-form"
           aria-label="Search"
           onChange={(e) => search(e)}
 
@@ -65,6 +66,7 @@ const NavBar = ({setFiltered}) => {
             </svg>
             Post Article
           </Button>
+          </div>
         </Container>
       </Navbar>
     );
