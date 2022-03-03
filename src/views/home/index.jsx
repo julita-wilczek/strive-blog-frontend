@@ -4,18 +4,21 @@ import BlogList from "../../components/blog/blog-list";
 import "./styles.css";
 import { useEffect } from "react";
 
-const Home = ({posts, setPosts}) => {
+const Home = ({posts, setPosts, filtered}) => {
 
   useEffect(() => {
     fetchPosts()
   }, [])
+
+  useEffect(() => {
+    setPosts(filtered)
+  }, [filtered])
 
   const fetchPosts = async() => {
     try {
     const response = await fetch("http://localhost:3001/blogPosts/")
     if (response.ok) {
     const data = await response.json()
-    console.log(data)
     setPosts(data)
     }
     

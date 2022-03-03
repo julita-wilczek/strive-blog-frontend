@@ -9,11 +9,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 const App = () => {
 
   const [posts, setPosts] = useState([])
+  const [filtered, setFiltered] = useState([])
   
   return (
     <BrowserRouter>
-      <NavBar />
-      <Route exact path="/"><Home setPosts={setPosts} posts={posts}/></Route> 
+      <NavBar setFiltered={setFiltered}/>
+      <Route exact path="/"><Home setPosts={setPosts} posts={posts} filtered={filtered}/></Route> 
       <Route exact path="/blog/:id"><Blog posts={posts}/></Route>
       <Route path="/new" component={NewBlogPost} />
       <Footer />
