@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Container, Image } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { parseISO, format } from "date-fns";
 import BlogAuthor from "../../components/blog/blog-author";
 import BlogLike from "../../components/likes/BlogLike";
 
@@ -43,7 +44,8 @@ const Blog = ({posts}) => {
           <BlogAuthor {...blog.author} />
         </div>
         <div className="blog-details-info">
-          <div>{blog.createdAt}</div>
+        
+          <div>{format(parseISO(blog.createdAt), "d MMM yyyy")}</div>
           <div>{`${blog.readTime.value} ${blog.readTime.unit} read`}</div>
           <div style={{marginTop:20}}>
             <BlogLike defaultLikes={["123"]} onChange={console.log}/>
