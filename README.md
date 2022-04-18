@@ -10,7 +10,7 @@ It is a refactored template originally created by Strive staff.
 - homepage with all posts
 - pages for individual posts with more details
 - API from the backend
-- abiltity to post a blog post
+- ability to post a blog post
 
 
 ### `npm start`
